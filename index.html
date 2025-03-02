@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>My Portfolio</h1>
+            </div>
+            <nav aria-label="Main navigation">
+                <button class="menu-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" role="menu">
+                    <li><a href="#home" class="btn">Home</a></li>
+                    <li><a href="#about" class="btn">About Me</a></li>
+                    <li><a href="#projects" class="btn">Projects</a></li>
+                    <li><a href="#contact" class="btn">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="home-content">
+                <div class="name-container">
+                    <h1>Dinesh Kumar</h1>
+                    <div class="typing-text" id="typingText" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>👋 Hi, I’m <strong>Dinesh Kumar Ola!</strong>  <br>
+                I’m a BCA student at Poornima University with a passion for web development and investment analysis.</p>
+        </section>
+
+        <section id="profile">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="img/Screenshot 2025-03-02 at 6.30.32 PM.png" alt="Dinesh Kumar Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <h2>Personal Information</h2>
+                    <p>Passionate about technology, innovation, and problem-solving. Always eager to learn and build solutions that make an impact.</p>
+                    <ul class="profile-info">
+                        <li><span class="info-icon">></span> Birthday: 2* Oct 2***</li>
+                        <li><span class="info-icon">></span> Website: www.dineshkumar.com</li>
+                        <li><span class="info-icon">></span> Phone: +91 9**6**3**2</li>
+                        <li><span class="info-icon">></span> City: Jaipur, Rajasthan, India</li>
+                        <li><span class="info-icon">></span> Degree: Pursuing BCA</li>
+                        <li><span class="info-icon">></span> Languages: English, Hindi</li>
+                        <li><span class="info-icon">></span> Email: info@dineshkumar.com</li>
+                        <li><span class="info-icon">></span> Freelance: Available</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-container">
+                <article class="project-card">
+                    <a href="https://dineshola.github.io/OlaClothing/" target="_blank" aria-label="OlaClothing Project">
+                        <img src="img/OlaClothing_Project_1.png" alt="OlaClothing e-commerce website screenshot">
+                    </a>
+                    <h3>OlaClothing</h3>
+                    <p>Premium quality clothes for all needs.</p>
+                </article>
+                <article class="project-card">
+                    <a href="https://dineshola.github.io/QuizWeb/" target="_blank" aria-label="QuizWeb Project">
+                        <img src="img/QuizWebpage_Project_2.png" alt="QuizWeb knowledge testing website screenshot">
+                    </a>
+                    <h3>QuizWeb</h3>
+                    <p>A website for your knowledge test.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer-container">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:info@dineshkumar.com">info@dineshkumar.com</a></p>
+        <p>Phone: <a href="tel:+9166513832">+91 9166513832</a></p>
+        <p>Address: Jaipur, Rajasthan, India</p>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                <i class="fa-regular fa-copyright"></i> 2024 <span class="highlight">Dinesh Kumar</span>. All Rights Reserved.
+            </div>
+            <div class="made-with-love">
+                Made with <i class="fa fa-heart" style="font-size:25px;color:red;"></i> in India by Dinesh Kumar
+            </div>
+            <div class="social-icons" role="navigation" aria-label="Social media links">
+                <a href="#" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/dineshola_/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/dinesh-kumar-93a5b0290" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" class="social-icon" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <button onclick="topFunction()" class="back-to-top" aria-label="Back to top">↑</button>
+        </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

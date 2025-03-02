@@ -1,0 +1,531 @@
+:root {
+    --primary-color: #ff9c33;
+    --text-color: #fff;
+    --background-dark: #333;
+    --blue-icon: #007bff; /* Blue color for the > icons */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    font-size: clamp(14px, 2.5vw, 16px); /* Scales font size */
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background-color: var(--background-dark);
+    color: var(--text-color);
+    padding: clamp(0.5rem, 2vw, 1rem);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo h1 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+/* Navigation - Base Styles */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+    flex-wrap: wrap;
+}
+
+.nav-links li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem);
+    background-color: #555;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover { background-color: #777; }
+.nav-links li a:focus { outline: 2px solid var(--primary-color); outline-offset: 2px; }
+
+/* Mobile Navigation (max-width: 768px) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger on mobile */
+        position: absolute;
+        left: 1rem; /* Position on the left side of the header */
+        top: 0.5rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--background-dark);
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block; /* Full width on mobile */
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    /* Profile Section - Mobile Adjustments */
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem; /* Add padding for better spacing */
+    }
+
+    .profile-image img {
+        max-width: 200px; /* Smaller image on mobile for better fit */
+        margin: 0 auto 1.5rem; /* Center image with spacing below */
+        border-radius: 8px;
+    }
+
+    .profile-details {
+        margin-top: 0; /* Remove top margin to reduce unnecessary space */
+    }
+
+    .profile-details h2 {
+        font-size: 1.2rem; /* Smaller heading on mobile */
+        margin-bottom: 0.8rem;
+    }
+
+    .profile-details p {
+        font-size: 0.9rem; /* Smaller text for mobile */
+        margin-bottom: 1rem;
+        line-height: 1.4; /* Tighter line spacing for readability */
+    }
+
+    .profile-info {
+        text-align: left; /* Left-align list items for better readability */
+        padding-left: 1rem; /* Add padding for list alignment */
+    }
+
+    .profile-info li {
+        font-size: 0.8rem; /* Smaller text for list items */
+        margin-bottom: 0.6rem; /* Reduced spacing between list items */
+    }
+}
+
+/* Tablet Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .profile-container {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .profile-image img {
+        max-width: 250px; /* Slightly smaller image on tablets */
+    }
+
+    .profile-details h2 {
+        font-size: 1.8rem;
+    }
+
+    .profile-details p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Home Section */
+#home {
+    min-height: 100vh; /* Use min-height for flexibility */
+    background-image: url('img/home_background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* Prevent scaling issues on mobile */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: clamp(1rem, 5vw, 2rem);
+    padding-top: clamp(50px, 10vh, 80px); /* Adjust for fixed header */
+    position: relative; /* Ensure child elements can position correctly */
+}
+
+/* Home Content */
+.home-content {
+    text-align: left;
+    width: 100%;
+    color: var(--text-color); /* Ensure text is readable against the background */
+    padding: 1rem; /* Add padding for mobile */
+}
+
+/* Name Container */
+.name-container {
+    position: relative; /* Remove absolute positioning for mobile */
+    top: auto;
+    left: auto;
+    transform: none;
+    max-width: 90%; /* Prevent overflow on small screens */
+    margin: 0 auto; /* Center the content */
+}
+
+/* Text Styling */
+.name-container h1 {
+    font-size: clamp(1.2rem, 5vw, 3rem); /* Smaller default for mobile, scales up */
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Stronger shadow for readability */
+}
+
+.typing-text {
+    font-size: clamp(0.7rem, 2.5vw, 1.5rem); /* Smaller for mobile, scales up */
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Stronger shadow for readability */
+}
+
+/* General Section */
+section {
+    padding: clamp(1rem, 4vw, 2rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-margin-top: clamp(50px, 10vh, 80px);
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    color: var(--background-dark);
+}
+
+/* About Section */
+#about {
+    padding: clamp(1rem, 4vw, 2rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-margin-top: clamp(50px, 10vh, 80px);
+}
+
+#about p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Profile Section */
+#profile {
+    padding: clamp(1rem, 4vw, 2rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-margin-top: clamp(50px, 10vh, 80px);
+    background-color: #fff; /* White background for contrast */
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 3vw, 2rem);
+    align-items: flex-start;
+}
+
+.profile-image img {
+    width: 100%;
+    max-width: 300px; /* Max width for the image on desktop */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.profile-details {
+    flex: 1;
+    min-width: 0; /* Prevent overflow */
+}
+
+.profile-details h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.profile-details p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.profile-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-info li {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: #444;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.info-icon {
+    color: var(--blue-icon);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+/* Projects */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 30vw, 250px), 1fr));
+    gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.project-card {
+    background-color: #f4f4f4;
+    padding: clamp(0.8rem, 2vw, 1rem);
+    border-radius: 10px;
+}
+
+.project-card img {
+    width: 100%;
+    height: clamp(100px, 25vw, 150px);
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.project-card a:hover img { transform: scale(1.05); }
+.project-card a:focus img { outline: 2px solid var(--primary-color); outline-offset: 2px; }
+
+/* Footer - Base Styles (Mobile and Default) */
+.footer-container {
+    background-color: #1a1a1a;
+    padding: clamp(20px, 5vw, 40px) clamp(10px, 2vw, 20px);
+    color: var(--text-color);
+    text-align: center;
+    scroll-margin-top: clamp(50px, 10vh, 80px);
+}
+
+.footer-container h2 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.footer-container p {
+    margin: 5px 0;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+}
+
+.footer-container a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-container a:hover { text-decoration: underline; }
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    gap: 1rem;
+}
+
+.copyright, .made-with-love, .social-icons {
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    flex: 1 1 100%;
+}
+
+.social-icons {
+    display: flex;
+    gap: clamp(10px, 2vw, 15px);
+    justify-content: center;
+}
+
+.social-icon {
+    font-size: clamp(18px, 3vw, 24px);
+    color: var(--primary-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover { color: var(--text-color); transform: scale(1.4); }
+.social-icon:focus { outline: 2px solid var(--primary-color); outline-offset: 2px; }
+
+.back-to-top {
+    position: fixed;
+    bottom: clamp(10px, 2vw, 20px);
+    right: clamp(10px, 2vw, 15px);
+    z-index: 996;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2vw, 15px);
+    border-radius: 50px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    display: none;
+}
+
+.back-to-top:hover { background-color: var(--text-color); color: var(--primary-color); transform: scale(1.3); }
+.back-to-top:focus { outline: 2px solid var(--primary-color); outline-offset: 2px; }
+
+/* Large Screens (Desktop) - Footer Adjustments */
+@media (min-width: 769px) {
+    .footer-container {
+        padding: 40px 20px; /* Match screenshot padding */
+        max-width: 1200px;
+        margin: 0 auto; /* Center the footer */
+    }
+
+    .footer-container h2 {
+        font-size: 1.5rem; /* Larger "CONTACT ME" heading */
+        margin-bottom: 20px; /* More spacing below heading */
+    }
+
+    .footer-container p {
+        font-size: 1rem; /* Larger contact info text */
+        margin: 10px 0; /* Even spacing between lines */
+        line-height: 1.5; /* Improved readability */
+        text-align: center; /* Center contact info as in screenshot */
+    }
+
+    .footer-bottom {
+        flex-wrap: nowrap; /* Horizontal layout for desktop */
+        justify-content: space-between; /* Space elements evenly */
+        padding: 20px 0; /* Increased padding */
+        border-top: 1px solid var(--primary-color); /* Orange line */
+        border-bottom: 1px solid var(--primary-color); /* Orange line */
+    }
+
+    .copyright, .made-with-love, .social-icons {
+        flex: 1 1 auto; /* Allow proportional sizing */
+        font-size: 1rem; /* Larger text for desktop */
+    }
+
+    .copyright {
+        text-align: left; /* Left-align copyright as in screenshot */
+        padding-left: 10px; /* Slight padding for alignment */
+    }
+
+    .made-with-love {
+        text-align: center; /* Center "Made with ♥ in India by Dinesh Kumar" as in screenshot */
+    }
+
+    .social-icons {
+        justify-content: flex-end; /* Align social icons to the right as in screenshot */
+        gap: 15px; /* Spacing between social icons */
+        padding-right: 10px; /* Slight padding for alignment */
+    }
+
+    .back-to-top {
+        right: 20px; /* Adjust position for desktop */
+        bottom: 20px;
+        border-radius: 50%; /* Circular button as in screenshot */
+        width: 40px; /* Fixed size for circular button */
+        height: 40px; /* Fixed size for circular button */
+        font-size: 1rem; /* Larger arrow */
+        padding: 0; /* Remove padding to maintain circle */
+    }
+}
+
+/* Tablet Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .profile-container {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .profile-image img {
+        max-width: 250px; /* Slightly smaller image on  tablets */
+    }
+
+    .profile-details h2 {
+        font-size: 1.8rem;
+    }
+
+    .profile-details p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Very Small Screens (Mobile) */
+@media (max-width: 480px) {
+    .project-container { grid-template-columns: 1fr; }
+    .name-container h1 { font-size: clamp(1rem, 4vw, 1.5rem); }
+    .typing-text { font-size: clamp(0.6rem, 2vw, 0.8rem); }
+    #home { 
+        min-height: 50vh; 
+        padding: 0.5rem; 
+        padding-top: 50px; 
+        background-size: contain; /* Adjust background for mobile */
+        background-repeat: no-repeat; /* Prevent tiling */
+    }
+    .name-container { margin-top: 15%; }
+    .home-content { padding: 0.5rem; } /* Less padding on very small screens */
+
+    .profile-details h2 {
+        font-size: 1.2rem;
+    }
+
+    .profile-details p {
+        font-size: 0.9rem;
+    }
+
+    .profile-info li {
+        font-size: 0.8rem;
+    }
+}
