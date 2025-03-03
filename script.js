@@ -59,5 +59,4 @@ function type() {
     }
 }
 
-
 window.addEventListener("load", () => setTimeout(type, 500));
