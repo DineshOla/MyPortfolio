@@ -156,7 +156,7 @@ nav {
 
 .name-container h1 {
     font-size: clamp(2rem, 5vw, 14rem);
-    margin-bottom: 0.5rem; /* Reduced from 0.8rem to decrease the gap */
+    margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
 
@@ -310,7 +310,7 @@ h2 {
 
     .name-container h1 {
         font-size: clamp(1.5rem, 5vw, 2.5rem);
-        margin-bottom: 0.5rem; /* Reduced from 0.8rem to decrease the gap */
+        margin-bottom: 0.5rem;
     }
 
     .typing-text {
@@ -368,25 +368,26 @@ h2 {
 .project-card a:hover img { transform: scale(1.05); }
 .project-card a:focus img { outline: 2px solid var(--primary-color); outline-offset: 2px; }
 
-/* Footer - Compressed for Both Desktop and Mobile */
+/* Footer - Reverted for Mobile (max-width: 768px) */
+/* Reverting to the previous state before compression */
 .footer-container {
     background-color: #1a1a1a;
-    padding: clamp(15px, 3vw, 30px) clamp(15px, 2vw, 30px);
+    padding: clamp(15px, 3vw, 30px) clamp(15px, 2vw, 30px); /* Reverted padding */
     color: var(--text-color);
     text-align: center;
     scroll-margin-top: clamp(60px, 10vh, 100px);
 }
 
 .footer-container h2 {
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
-    margin-bottom: 0.8rem;
+    font-size: clamp(1.2rem, 4vw, 1.8rem); /* Reverted font size */
+    margin-bottom: 0.8rem; /* Reverted spacing */
     color: var(--primary-color);
     text-transform: uppercase;
 }
 
 .footer-container p {
-    margin: 0.5rem 0;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    margin: 0.5rem 0; /* Reverted spacing */
+    font-size: clamp(0.9rem, 2vw, 1.1rem); /* Reverted font size */
 }
 
 .footer-container a {
@@ -402,26 +403,26 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
-    padding: 1rem 0;
+    margin-top: 1rem; /* Reverted spacing */
+    padding: 1rem 0; /* Reverted padding */
     border-top: 1px solid var(--primary-color);
     border-bottom: 1px solid var(--primary-color);
-    gap: 1rem;
+    gap: 1rem; /* Reverted gap */
 }
 
 .copyright, .made-with-love, .social-icons {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem); /* Reverted font size */
     flex: 1 1 100%;
 }
 
 .social-icons {
     display: flex;
-    gap: clamp(10px, 2vw, 15px);
+    gap: clamp(10px, 2vw, 15px); /* Reverted gap */
     justify-content: center;
 }
 
 .social-icon {
-    font-size: clamp(20px, 3vw, 28px);
+    font-size: clamp(20px, 3vw, 28px); /* Reverted font size */
     color: var(--primary-color);
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -431,16 +432,16 @@ h2 {
 
 .back-to-top {
     position: fixed;
-    bottom: clamp(15px, 2vw, 20px);
+    bottom: clamp(15px, 2vw, 20px); /* Reverted spacing */
     right: clamp(15px, 2vw, 20px);
     z-index: 996;
     border: none;
     background-color: var(--primary-color);
     color: var(--text-color);
     cursor: pointer;
-    padding: clamp(10px, 1.5vw, 12px) clamp(12px, 2vw, 14px);
-    border-radius: 50px;
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    padding: clamp(10px, 1.5vw, 12px) clamp(12px, 2vw, 14px); /* Reverted padding */
+    border-radius: 50px; /* Reverted radius */
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Reverted font size */
     display: none;
 }
 
