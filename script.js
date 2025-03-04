@@ -32,7 +32,7 @@ menuToggle.addEventListener("click", () => {
 
 // Typing effect
 const typingText = document.getElementById("typingText");
-const textArray = ["I'm a Web Developer", "I'm a Investor"];
+const textArray = ["I'm a Web Developer.", "I'm a Investor."];
 let textIndex = 0, charIndex = 0, isDeleting = false;
 
 function type() {
