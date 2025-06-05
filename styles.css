@@ -22,7 +22,7 @@ body {
 header {
     background-color: var(--background-dark);
     color: var(--text-color);
-    padding: clamp(0.6rem, 2vw, 1.2rem);
+    padding: clamp(0.9rem, 2vw, 1.2rem);
     position: fixed;
     width: 100%;
     top: 0;
@@ -36,7 +36,7 @@ header {
     align-items: center;
     max-width: 1600px;
     margin: 0 auto;
-    padding: 0 3rem;
+    padding: 0 2rem;
 }
 
 .logo h1 {
@@ -358,6 +358,7 @@ h2 {
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
+   
 }
 
 .project-card a {
@@ -365,7 +366,7 @@ h2 {
     text-decoration: none;
 }
 
-.project-card a:hover img { transform: scale(1.05); }
+.project-card a:hover img { transform: scale(1.06); }
 .project-card a:focus img { outline: 2px solid var(--primary-color); outline-offset: 2px; }
 
 
